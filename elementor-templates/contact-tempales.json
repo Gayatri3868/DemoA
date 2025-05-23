@@ -1,0 +1,97 @@
+{
+    "title": "Contact Tempales",
+    "type": "page",
+    "content": [
+        {
+            "id": "74babab6",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "column",
+                "background_background": "classic",
+                "background_color": "#E41F1F"
+            },
+            "elements": [
+                {
+                    "id": "69089961",
+                    "elType": "widget",
+                    "settings": {
+                        "title": "Contact us"
+                    },
+                    "elements": [],
+                    "widgetType": "heading"
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "57b3007e",
+            "elType": "container",
+            "settings": {
+                "flex_direction": "row",
+                "flex_gap": {
+                    "unit": "px",
+                    "size": 0,
+                    "column": "0",
+                    "row": "0"
+                }
+            },
+            "elements": [
+                {
+                    "id": "47801905",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "50"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "68343902",
+                            "elType": "widget",
+                            "settings": {
+                                "image": {
+                                    "url": "http:\/\/localhost:10003\/wp-content\/uploads\/2025\/05\/Eliminating-power-drops-and-electrical-connections.png",
+                                    "id": 55,
+                                    "size": "",
+                                    "alt": "",
+                                    "source": "library"
+                                }
+                            },
+                            "elements": [],
+                            "widgetType": "image"
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "2bbbdca9",
+                    "elType": "container",
+                    "settings": {
+                        "flex_direction": "column",
+                        "content_width": "full",
+                        "width": {
+                            "unit": "%",
+                            "size": "50"
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "b1454e3",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "Tweatsadsa"
+                            },
+                            "elements": [],
+                            "widgetType": "heading"
+                        }
+                    ],
+                    "isInner": true
+                }
+            ],
+            "isInner": false
+        }
+    ]
+}
