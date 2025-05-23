@@ -272,3 +272,43 @@ if ( ! function_exists( 'hello_elementor_body_open' ) ) {
 require HELLO_THEME_PATH . '/theme.php';
 
 HelloTheme\Theme::instance();
+
+
+
+add_action('save_post_elementor_library', 'export_elementor_template_to_json', 10, 3);
+
+function export_elementor_template_to_json($post_ID, $post, $update) {
+    // Only export if post is published
+    if ($post->post_status !== 'publish') {
+        return;
+    }
+
+    // Get Elementor data
+    $elementor_data = get_post_meta($post_ID, '_elementor_data', true);
+    if (empty($elementor_data)) {
+        return;
+    }
+
+    $template_data = [
+        'title'   => get_the_title($post_ID),
+        'type'    => get_post_meta($post_ID, '_elementor_template_type', true),
+        'content' => json_decode($elementor_data, true),
+    ];
+
+    // Convert to JSON
+    $json = wp_json_encode($template_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+    // Create export folder if not exists
+    $folder = WP_CONTENT_DIR . '/elementor-templates';
+    if (!file_exists($folder)) {
+        wp_mkdir_p($folder);
+    }
+
+    // File name: template-name-slug.json
+    $slug = sanitize_title($post->post_title);
+    $file_path = $folder . '/' . $slug . '.json';
+
+    // Save to file
+    file_put_contents($file_path, $json);
+}
+
